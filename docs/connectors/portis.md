@@ -5,7 +5,7 @@
 - [Example](#example)
 
 ## Install
-`yarn add @web3-react/portis-connector`
+`yarn add @qweb3/portis-connector`
 
 ## Arguments
 ```typescript
@@ -16,7 +16,7 @@ config?: any
 
 ## Example
 ```javascript
-import { PortisConnector } from '@web3-react/portis-connector'
+import { PortisConnector } from '@qweb3/portis-connector'
 
 const portis = new PortisConnector({ dAppId: '...', networks: [1, 100] })
 ```

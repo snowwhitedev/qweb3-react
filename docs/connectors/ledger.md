@@ -5,7 +5,7 @@
 - [Example](#example)
 
 ## Install
-`yarn add @web3-react/ledger-connector`
+`yarn add @qweb3/ledger-connector`
 
 ## Arguments
 ```typescript
@@ -19,7 +19,7 @@ baseDerivationPath?: string
 
 ## Example
 ```javascript
-import { LedgerConnector } from '@web3-react/ledger-connector'
+import { LedgerConnector } from '@qweb3/ledger-connector'
 
 const ledger = new LedgerConnector({ chainId: 1, url: '...' })
 ```
