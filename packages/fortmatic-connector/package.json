@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/fortmatic-connector",
+  "name": "@qweb3/fortmatic-connector",
   "publishConfig": {
     "access": "public"
   },

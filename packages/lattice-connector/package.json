@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/lattice-connector",
+  "name": "@qweb3/lattice-connector",
   "publishConfig": {
     "access": "public"
   },

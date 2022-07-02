@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/trezor-connector",
+  "name": "@qweb3/trezor-connector",
   "publishConfig": {
     "access": "public"
   },

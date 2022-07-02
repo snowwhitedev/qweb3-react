@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/network-connector",
+  "name": "@qweb3/network-connector",
   "publishConfig": {
     "access": "public"
   },

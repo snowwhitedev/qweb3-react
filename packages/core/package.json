@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/core",
+  "name": "@qweb3/core",
   "publishConfig": {
     "access": "public"
   },

@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/walletconnect-connector",
+  "name": "@qweb3/walletconnect-connector",
   "publishConfig": {
     "access": "public"
   },

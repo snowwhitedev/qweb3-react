@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/magic-connector",
+  "name": "@qweb3/magic-connector",
   "publishConfig": {
     "access": "public"
   },

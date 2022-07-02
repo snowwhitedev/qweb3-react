@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/torus-connector",
+  "name": "@qweb3/torus-connector",
   "publishConfig": {
     "access": "public"
   },

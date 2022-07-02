@@ -1,5 +1,5 @@
 {
-  "name": "@web3-react/ledger-connector",
+  "name": "@qweb3/ledger-connector",
   "publishConfig": {
     "access": "public"
   },
