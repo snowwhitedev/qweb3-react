@@ -4,59 +4,19 @@ import {
   NoEthereumProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected
 } from '@qweb3/injected-connector'
-import { UserRejectedRequestError as UserRejectedRequestErrorWalletConnect } from '@qweb3/walletconnect-connector'
-import { UserRejectedRequestError as UserRejectedRequestErrorFrame } from '@qweb3/frame-connector'
 import { Web3Provider } from '@ethersproject/providers'
 import { formatEther } from '@ethersproject/units'
 
 import { useEagerConnect, useInactiveListener } from '../hooks'
-import {
-  injected,
-  network,
-  walletconnect,
-  walletlink,
-  ledger,
-  trezor,
-  lattice,
-  frame,
-  authereum,
-  fortmatic,
-  magic,
-  portis,
-  torus
-} from '../connectors'
+import { injected } from '../connectors'
 import { Spinner } from '../components/Spinner'
 
 enum ConnectorNames {
-  Injected = 'Injected',
-  Network = 'Network',
-  WalletConnect = 'WalletConnect',
-  WalletLink = 'WalletLink',
-  Ledger = 'Ledger',
-  Trezor = 'Trezor',
-  Lattice = 'Lattice',
-  Frame = 'Frame',
-  Authereum = 'Authereum',
-  Fortmatic = 'Fortmatic',
-  Magic = 'Magic',
-  Portis = 'Portis',
-  Torus = 'Torus'
+  Injected = 'Injected'
 }
 
 const connectorsByName: { [connectorName in ConnectorNames]: any } = {
   [ConnectorNames.Injected]: injected,
-  [ConnectorNames.Network]: network,
-  [ConnectorNames.WalletConnect]: walletconnect,
-  [ConnectorNames.WalletLink]: walletlink,
-  [ConnectorNames.Ledger]: ledger,
-  [ConnectorNames.Trezor]: trezor,
-  [ConnectorNames.Lattice]: lattice,
-  [ConnectorNames.Frame]: frame,
-  [ConnectorNames.Authereum]: authereum,
-  [ConnectorNames.Fortmatic]: fortmatic,
-  [ConnectorNames.Magic]: magic,
-  [ConnectorNames.Portis]: portis,
-  [ConnectorNames.Torus]: torus
 }
 
 function getErrorMessage(error: Error) {
@@ -65,9 +25,7 @@ function getErrorMessage(error: Error) {
   } else if (error instanceof UnsupportedChainIdError) {
     return "You're connected to an unsupported network."
   } else if (
-    error instanceof UserRejectedRequestErrorInjected ||
-    error instanceof UserRejectedRequestErrorWalletConnect ||
-    error instanceof UserRejectedRequestErrorFrame
+    error instanceof UserRejectedRequestErrorInjected
   ) {
     return 'Please authorize this website to access your Ethereum account.'
   } else {
@@ -366,120 +324,6 @@ function App() {
             }}
           >
             Sign Message
-          </button>
-        )}
-        {!!(connector === connectorsByName[ConnectorNames.Network] && chainId) && (
-          <button
-            style={{
-              height: '3rem',
-              borderRadius: '1rem',
-              cursor: 'pointer'
-            }}
-            onClick={() => {
-              ;(connector as any).changeChainId(chainId === 1 ? 4 : 1)
-            }}
-          >
-            Switch Networks
-          </button>
-        )}
-        {connector === connectorsByName[ConnectorNames.WalletConnect] && (
-          <button
-            style={{
-              height: '3rem',
-              borderRadius: '1rem',
-              cursor: 'pointer'
-            }}
-            onClick={() => {
-              ;(connector as any).close()
-            }}
-          >
-            Kill WalletConnect Session
-          </button>
-        )}
-        {connector === connectorsByName[ConnectorNames.WalletLink] && (
-          <button
-            style={{
-              height: '3rem',
-              borderRadius: '1rem',
-              cursor: 'pointer'
-            }}
-            onClick={() => {
-              ;(connector as any).close()
-            }}
-          >
-            Kill WalletLink Session
-          </button>
-        )}
-        {connector === connectorsByName[ConnectorNames.Fortmatic] && (
-          <button
-            style={{
-              height: '3rem',
-              borderRadius: '1rem',
-              cursor: 'pointer'
-            }}
-            onClick={() => {
-              ;(connector as any).close()
-            }}
-          >
-            Kill Fortmatic Session
-          </button>
-        )}
-        {connector === connectorsByName[ConnectorNames.Magic] && (
-          <button
-            style={{
-              height: '3rem',
-              borderRadius: '1rem',
-              cursor: 'pointer'
-            }}
-            onClick={() => {
-              ;(connector as any).close()
-            }}
-          >
-            Kill Magic Session
-          </button>
-        )}
-        {connector === connectorsByName[ConnectorNames.Portis] && (
-          <>
-            {chainId !== undefined && (
-              <button
-                style={{
-                  height: '3rem',
-                  borderRadius: '1rem',
-                  cursor: 'pointer'
-                }}
-                onClick={() => {
-                  ;(connector as any).changeNetwork(chainId === 1 ? 100 : 1)
-                }}
-              >
-                Switch Networks
-              </button>
-            )}
-            <button
-              style={{
-                height: '3rem',
-                borderRadius: '1rem',
-                cursor: 'pointer'
-              }}
-              onClick={() => {
-                ;(connector as any).close()
-              }}
-            >
-              Kill Portis Session
-            </button>
-          </>
-        )}
-        {connector === connectorsByName[ConnectorNames.Torus] && (
-          <button
-            style={{
-              height: '3rem',
-              borderRadius: '1rem',
-              cursor: 'pointer'
-            }}
-            onClick={() => {
-              ;(connector as any).close()
-            }}
-          >
-            Kill Torus Session
           </button>
         )}
       </div>

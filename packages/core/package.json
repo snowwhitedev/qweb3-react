@@ -37,7 +37,7 @@
   "dependencies": {
     "@ethersproject/keccak256": "^5.0.0-beta.130",
     "@qweb3/abstract-connector": "^6.2.16",
-    "@qweb3/types": "^6.0.7",
+    "@qweb3/types": "latest",
     "tiny-invariant": "^1.0.6",
     "tiny-warning": "^1.0.3"
   },

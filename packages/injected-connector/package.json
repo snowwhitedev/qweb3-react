@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@qweb3/abstract-connector": "^6.2.16",
-    "@qweb3/types": "^6.0.7",
+    "@qweb3/types": "latest",
     "tiny-warning": "^1.0.3"
   },
   "license": "GPL-3.0-or-later"

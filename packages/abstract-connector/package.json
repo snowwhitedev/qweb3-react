@@ -34,7 +34,7 @@
     "lint": "tsdx lint src"
   },
   "dependencies": {
-    "@qweb3/types": "^6.0.7"
+    "@qweb3/types": "latest"
   },
   "license": "GPL-3.0-or-later"
 }
